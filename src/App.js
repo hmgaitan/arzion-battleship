@@ -4,6 +4,7 @@ import Footer from './components/Footer';
 import gameContext from './context/game/gameContext';
 
 import { START_SCREEN } from './types';
+import StartScreen from './screens/StartScreen';
 
 const App = () => {
   const { activeScreen } = useContext(gameContext);
@@ -11,7 +12,7 @@ const App = () => {
   return (
     <>
       <Header />
-      {activeScreen === START_SCREEN && <p>HOLA MUNDO REACT</p>}
+      {activeScreen === START_SCREEN && <StartScreen />}
       <Footer />
     </>
   );

@@ -1,4 +1,4 @@
-import { CHANGE_SCREEN } from '../../types';
+import { CHANGE_SCREEN, GAME_RESULT } from '../../types';
 
 const gameReducer = (state, action) => {
   switch (action.type) {
@@ -6,6 +6,12 @@ const gameReducer = (state, action) => {
       return {
         ...state,
         activeScreen: action.payload,
+      };
+
+    case GAME_RESULT:
+      return {
+        ...state,
+        result: action.payload,
       };
 
     default:

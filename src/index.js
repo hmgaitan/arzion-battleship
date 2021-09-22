@@ -5,11 +5,14 @@ import reportWebVitals from './reportWebVitals';
 
 import './css/style.css';
 import GameState from './context/game';
+import PlayerState from './context/player';
 
 ReactDOM.render(
   <React.StrictMode>
     <GameState>
-      <App />
+      <PlayerState>
+        <App />
+      </PlayerState>
     </GameState>
   </React.StrictMode>,
   document.getElementById('root')

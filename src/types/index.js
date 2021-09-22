@@ -3,4 +3,8 @@ export const START_SCREEN = 'START_SCREEN';
 export const GAME_SCREEN = 'GAME_SCREEN';
 export const END_GAME_SCREEN = 'END_GAME_SCREEN';
 
+// GAME ACTION
 export const CHANGE_SCREEN = 'CHANGE_SCREEN';
+export const GAME_RESULT = 'GAME_RESULT';
+export const ADD_PLAYER_NAME = 'ADD_PLAYER_NAME';
+export const ADD_PLAYER_SHIPS = 'ADD_PLAYER_SHIPS';
