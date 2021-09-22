@@ -1,27 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import gameContext from './context/game/gameContext';
 
-import logo from './logo.svg';
-import './App.css';
+import { START_SCREEN } from './types';
 
-function App() {
+const App = () => {
+  const { activeScreen } = useContext(gameContext);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      {activeScreen === START_SCREEN && <p>HOLA MUNDO REACT</p>}
+      <Footer />
+    </>
   );
-}
+};
 
 export default App;

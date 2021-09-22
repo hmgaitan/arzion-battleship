@@ -1,12 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import './css/style.css';
+import GameState from './context/game';
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <GameState>
+      <App />
+    </GameState>
   </React.StrictMode>,
   document.getElementById('root')
 );

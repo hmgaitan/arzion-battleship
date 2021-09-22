@@ -1,0 +1,6 @@
+// GAME SCREEN
+export const START_SCREEN = 'START_SCREEN';
+export const GAME_SCREEN = 'GAME_SCREEN';
+export const END_GAME_SCREEN = 'END_GAME_SCREEN';
+
+export const CHANGE_SCREEN = 'CHANGE_SCREEN';
