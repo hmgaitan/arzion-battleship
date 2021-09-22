@@ -4,7 +4,14 @@ import PropType from 'prop-types';
 import gameReducer from './gameReducer';
 import gameContext from './gameContext';
 
-import { CHANGE_SCREEN, GAME_RESULT, START_SCREEN } from '../../types';
+import {
+  ADD_COMPUTER_SHIPS,
+  CHANGE_SCREEN,
+  GAME_RESULT,
+  RESTART_GAME,
+  START_SCREEN,
+  SURRENDER_GAME,
+} from '../../types';
 
 const GameState = (props) => {
   const { children } = props;
@@ -12,6 +19,7 @@ const GameState = (props) => {
   const initialState = {
     activeScreen: START_SCREEN,
     result: undefined,
+    computerShips: [],
   };
 
   const [state, dispatch] = useReducer(gameReducer, initialState);
@@ -30,13 +38,36 @@ const GameState = (props) => {
     });
   };
 
+  const addComputerShipsFn = (ships) => {
+    dispatch({
+      type: ADD_COMPUTER_SHIPS,
+      payload: ships,
+    });
+  };
+
+  const gameSurrenderFn = () => {
+    dispatch({
+      type: SURRENDER_GAME,
+    });
+  };
+
+  const gameRestartGameFn = () => {
+    dispatch({
+      type: RESTART_GAME,
+    });
+  };
+
   return (
     <gameContext.Provider
       value={{
         activeScreen: state.activeScreen,
         result: state.result,
+        computerShips: state.computerShips,
         changeScreenFn,
         changeResultFn,
+        addComputerShipsFn,
+        gameSurrenderFn,
+        gameRestartGameFn,
       }}
     >
       {children}

@@ -1,4 +1,4 @@
-import { ADD_PLAYER_NAME, ADD_PLAYER_SHIPS } from '../../types';
+import { ADD_PLAYER_NAME, ADD_PLAYER_SHIPS, RESTART_GAME } from '../../types';
 
 const playerReducer = (state, action) => {
   switch (action.type) {
@@ -12,6 +12,13 @@ const playerReducer = (state, action) => {
       return {
         ...state,
         ships: action.payload,
+      };
+
+    case RESTART_GAME:
+      return {
+        ...state,
+        ships: [],
+        name: '',
       };
 
     default:

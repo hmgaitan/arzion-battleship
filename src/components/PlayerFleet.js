@@ -55,6 +55,7 @@ const PlayerFleet = ({
     <div id="play-ready">
       <p className="player-tip">Ships are in formation.</p>
       <input
+        className="player-input"
         type="text"
         placeholder="Insert your name"
         onChange={newPlayerHandler}

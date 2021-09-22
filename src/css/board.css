@@ -15,7 +15,7 @@
   width: 10%;
   height: 10%;
   box-sizing: border-box;
-  background: var(--oc-gray-1);
+  background: var(--oc-white-1);
   border: 1px solid var(--oc-gray-2);
   cursor: crosshair;
   transition: background-color 100ms ease-in-out;
@@ -45,7 +45,7 @@
 
 /* Empty */
 .board .empty {
-  background-color: var(--oc-gray-1);
+  background-color: var(--oc-white-1);
 }
 .board .empty:hover {
   background-color: var(--oc-yellow-2);
@@ -54,33 +54,33 @@
 /* Ship */
 
 .board .ship {
-  background-color: var(--oc-indigo-5);
-  border: 1px solid var(--oc-indigo-6);
+  background-color: var(--oc-gray-5);
+  border: 1px solid var(--oc-gray-6);
 }
 
 .board .ship:hover {
-  background-color: var(--oc-indigo-9);
+  background-color: var(--oc-gray-9);
 }
 
 /* Hit  */
 
 .board .hit {
-  background-color: var(--oc-red-8);
-  border: 1px solid var(--oc-red-9);
+  background-color: var(--oc-orange-8);
+  border: 1px solid var(--oc-orange-9);
 }
 
 /* Miss */
 
 .board .miss {
-  background-color: var(--oc-gray-4);
-  border: 1px solid var(--oc-gray-2);
+  background-color: var(--oc-blue-4);
+  border: 1px solid var(--oc-blue-2);
 }
 
 /* Sunk ship */
 
 .board .ship-sunk {
-  background-color: var(--oc-gray-9);
-  border: 1px solid var(--oc-gray-8);
+  background-color: var(--oc-red-9);
+  border: 1px solid var(--oc-red-8);
   animation: shake 50ms 6 alternate backwards;
 }
 

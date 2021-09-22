@@ -190,3 +190,9 @@ button:disabled {
 button:disabled:hover {
   opacity: 1;
 }
+
+.player-input {
+  border: 1px solid var(--oc-gray-5);
+  padding: 0.5rem;
+  margin-top: 1rem;
+}

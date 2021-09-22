@@ -6,9 +6,10 @@ import PlayerFleet from '../components/PlayerFleet';
 
 import { GAME_SCREEN } from '../types';
 import PlayerPlacementBoard from '../components/PlayerPlacementBoard';
+import { placeAllComputerShips } from '../utils/layoutHelpers';
 
 const StartScreen = () => {
-  const { changeScreenFn } = useContext(gameContext);
+  const { changeScreenFn, addComputerShipsFn } = useContext(gameContext);
   const { addPlayerNameFn, setPlayerShipsFn } = useContext(playerContext);
 
   const [currentlyPlacing, setCurrentlyPlacing] = useState(null);
@@ -45,7 +46,6 @@ const StartScreen = () => {
 
   const rotateShip = (event) => {
     event.preventDefault();
-    console.log(event);
     if (currentlyPlacing != null && event.button === 2) {
       setCurrentlyPlacing({
         ...currentlyPlacing,
@@ -57,8 +57,15 @@ const StartScreen = () => {
     }
   };
 
+  const generateComputerShips = () => {
+    const placedComputerShips = placeAllComputerShips(
+      createAvailableShips().slice()
+    );
+    addComputerShipsFn(placedComputerShips);
+  };
+
   const startGame = () => {
-    // generateComputerShips();
+    generateComputerShips();
     setPlayerShipsFn(placedShips);
     changeScreenFn(GAME_SCREEN);
   };

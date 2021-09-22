@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import playerReducer from './playerReducer';
 import playerContext from './playerContext';
 
-import { ADD_PLAYER_NAME, ADD_PLAYER_SHIPS } from '../../types';
+import { ADD_PLAYER_NAME, ADD_PLAYER_SHIPS, RESTART_GAME } from '../../types';
 
 const PlayerState = (props) => {
   const { children } = props;
@@ -30,12 +30,20 @@ const PlayerState = (props) => {
     });
   };
 
+  const restartPlayerFn = () => {
+    dispatch({
+      type: RESTART_GAME,
+    });
+  };
+
   return (
     <playerContext.Provider
       value={{
         name: state.name,
+        ships: state.ships,
         addPlayerNameFn,
         setPlayerShipsFn,
+        restartPlayerFn,
       }}
     >
       {children}

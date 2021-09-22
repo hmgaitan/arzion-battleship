@@ -8,3 +8,11 @@ export const CHANGE_SCREEN = 'CHANGE_SCREEN';
 export const GAME_RESULT = 'GAME_RESULT';
 export const ADD_PLAYER_NAME = 'ADD_PLAYER_NAME';
 export const ADD_PLAYER_SHIPS = 'ADD_PLAYER_SHIPS';
+export const ADD_COMPUTER_SHIPS = 'ADD_COMPUTER_SHIPS';
+export const RESTART_GAME = 'RESTART_GAME';
+export const SURRENDER_GAME = 'SURRENDER_GAME';
+
+// GAME RESULT
+export const SURRENDER = 'SURRENDER';
+export const WINNER = 'WINNER';
+export const LOSER = 'LOSER';
